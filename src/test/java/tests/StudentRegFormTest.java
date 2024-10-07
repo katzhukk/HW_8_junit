@@ -112,10 +112,10 @@ public class StudentRegFormTest extends TestBase {
     }
 
     @MethodSource
-    @ParameterizedTest(name = "Тест на проверку городов и штата {0}.")
-    void checkCities(String state1, List<String> cities) {
+    @ParameterizedTest(name = "Тест на проверку соответствия городов {1} по штату {0}.")
+    void checkCities(String state, List<String> cities) {
         registrationPage.openPage();
-        $("#react-select-3-input").setValue(String.valueOf(state1)).pressEnter();
+        $("#react-select-3-input").setValue(String.valueOf(state)).pressEnter();
         $("#city").click();
         for(int i = 0; i < cities.size(); i++)
         {
