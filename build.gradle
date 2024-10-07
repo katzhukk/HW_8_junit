@@ -8,10 +8,10 @@ repositories{
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:7.4.3", /* Selenide - Maven Repository - имитация взаимодействия с браузером */
-            "org.junit.jupiter:junit-jupiter:5.10.0", /* Эта строчка поможет превратить код в тестовый инструмент */
-            "com.github.javafaker:javafaker:1.0.2",
-            'org.slf4j:slf4j-simple:2.0.7' /* Строчка для работы логов */
+            'org.junit.jupiter:junit-jupiter:5.11.0',
+            'com.codeborne:selenide:7.5.0',
+            'org.slf4j:slf4j-simple:2.0.7',
+            'com.github.javafaker:javafaker:1.0.2'
     )
 }
 

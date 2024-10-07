@@ -27,7 +27,6 @@ public class RegistrationPage {
 
     private final CalendarComponent calendarComponent = new CalendarComponent();
     private final TableResults checkTableResults = new TableResults();
-    private final TableResults checkNegativeResult = new TableResults();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -101,10 +100,6 @@ public class RegistrationPage {
     public RegistrationPage checkResult(String key, String value) {
         checkTableResults.checkTableResults(key, value);
         return this;
-    }
-
-    public void checkNegativeResult() {
-        checkNegativeResult.checkNegativeResult();
     }
 
     public void clickSubmit() {

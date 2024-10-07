@@ -38,11 +38,9 @@ public class RandomUtils {
         if (month.equals("January") || month.equals("March") || month.equals("May") || month.equals("July")
                 || month.equals("August") || month.equals("October") || month.equals("December")) {
             return String.format("%02d", faker.number().numberBetween(1, 31));
-        }
-        if (month.equals("April") || month.equals("June") || month.equals("September") || month.equals("November")) {
+        }else if (month.equals("April") || month.equals("June") || month.equals("September") || month.equals("November")) {
             return String.format("%02d", faker.number().numberBetween(1, 30));
-        }
-        if (month.equals("February") && (Integer.parseInt(year) % 4 == 0)) {
+        }else if (month.equals("February") && (Integer.parseInt(year) % 4 == 0)) {
             return String.format("%02d", faker.number().numberBetween(1, 29));
         } else {
             return String.format("%02d", faker.number().numberBetween(1, 28));
