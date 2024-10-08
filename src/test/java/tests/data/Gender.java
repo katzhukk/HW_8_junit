@@ -1,5 +1,11 @@
 package tests.data;
 
 public enum Gender {
-    Male, Female, Other
+    MALE("Male"), FEMALE("Female"), OTHER("Other");
+    public final String description;
+
+    Gender(String description) {
+        this.description = description;
+    }
 }
+

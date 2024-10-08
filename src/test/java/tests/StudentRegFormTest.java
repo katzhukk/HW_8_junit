@@ -43,7 +43,7 @@ public class StudentRegFormTest extends TestBase {
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
                 .setUserNumber(userNumber)
-                .setGenderWrapper(String.valueOf(gender))
+                .setGenderWrapper(String.valueOf(gender.description))
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubjects(subjects)
                 .setHobbiesWrapper(hobbies)
@@ -111,15 +111,14 @@ public class StudentRegFormTest extends TestBase {
         );
     }
 
-    @MethodSource
+    @MethodSource("checkCities")
     @ParameterizedTest(name = "Тест на проверку соответствия городов {1} по штату {0}.")
     void checkCities(String state, List<String> cities) {
         registrationPage.openPage();
         $("#react-select-3-input").setValue(String.valueOf(state)).pressEnter();
         $("#city").click();
-        for(int i = 0; i < cities.size(); i++)
-        {
-            $$("[id='stateCity-wrapper']").filter(visible).shouldHave(texts(cities.get(i)));
+        for (String s : cities) {
+            $$("[id='stateCity-wrapper']").filter(visible).shouldHave(texts(s));
         }
     }
 }
